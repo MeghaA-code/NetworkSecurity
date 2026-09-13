@@ -25,7 +25,7 @@ def get_requirements()->List[str]:
             ## Process each line
             for line in lines:
                 requirement=line.strip()
-                ##ignore the empty line ans -e.
+                ##ignore the empty line and -e.
                 if requirement and requirement!='-e.':
                     requirement_lst.append(requirement)
 
@@ -45,3 +45,30 @@ setup(
     packages=find_packages(),
     install_requires=get_requirements()
 )
+
+
+
+
+
+
+
+
+
+
+'''get_requirements() is a user-defined function in setup.py that reads the 
+dependencies from the requirements.txt file and returns them as a list. 
+We use it to automatically include all the required libraries when packaging
+ or installing our project, instead of manually writing each dependency.'''
+
+'''
+It opens requirements.txt.
+
+Reads all the lines.
+
+Removes extra spaces and newline characters using strip().
+
+Ignores empty lines and -e ..
+
+Stores the library names in a list.
+
+Returns the list to install_requires'''
